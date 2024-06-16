@@ -7,13 +7,15 @@ import Navbar from "./components/Navbar.jsx";
 import Sidebar from "./components/Sidebar.jsx";
 import ChatArea from "./components/ChatArea.jsx";
 import RightPanel from "./components/RightPanel.jsx";
-import { Flex } from "@chakra-ui/react";
+import { Flex, useMediaQuery } from "@chakra-ui/react";
 
 function App() {
+  const [isLargerThan768] = useMediaQuery("(min-width: 768px)");
+
   return (
     <Router>
       <Navbar />
-      <Flex>
+      <Flex direction={isLargerThan768 ? "row" : "column"}>
         <Sidebar />
         <ChatArea />
         <RightPanel />

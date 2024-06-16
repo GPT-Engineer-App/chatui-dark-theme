@@ -1,10 +1,12 @@
-import { Box, VStack, Link } from "@chakra-ui/react";
+import { Box, VStack, Link, useMediaQuery } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
 import { FaHome, FaInfoCircle, FaEnvelope } from "react-icons/fa";
 
 const Sidebar = () => {
+  const [isLargerThan768] = useMediaQuery("(min-width: 768px)");
+
   return (
-    <Box bg="gray.800" color="white" w="250px" p={4} h="100vh">
+    <Box bg="gray.800" color="white" w={isLargerThan768 ? "250px" : "100%"} p={4} h={isLargerThan768 ? "100vh" : "auto"}>
       <VStack spacing={4} align="start">
         <RouterLink to="/">
           <Link display="flex" alignItems="center">
