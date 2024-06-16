@@ -1,4 +1,4 @@
-import { Box, Flex, Link } from "@chakra-ui/react";
+import { Box, Flex, Link, Button } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
 
 const Navbar = () => {
@@ -15,6 +15,9 @@ const Navbar = () => {
           </RouterLink>
           <RouterLink to="/contact">
             <Link px={2}>Contact</Link>
+          </RouterLink>
+          <RouterLink to="/login">
+            <Button ml={4} colorScheme="blue">Login</Button>
           </RouterLink>
         </Flex>
       </Flex>
