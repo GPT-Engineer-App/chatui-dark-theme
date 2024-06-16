@@ -1,6 +1,6 @@
 import { Box, VStack, Link, useMediaQuery } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
-import { FaHome, FaInfoCircle, FaEnvelope } from "react-icons/fa";
+import { FaComments, FaInfoCircle, FaCode, FaList } from "react-icons/fa";
 
 const Sidebar = () => {
   const [isLargerThan768] = useMediaQuery("(min-width: 768px)");
@@ -10,20 +10,26 @@ const Sidebar = () => {
       <VStack spacing={4} align="start">
         <RouterLink to="/">
           <Link display="flex" alignItems="center">
-            <FaHome />
-            <Box ml={2}>Home</Box>
+            <FaComments />
+            <Box ml={2}>Just Chat</Box>
           </Link>
         </RouterLink>
-        <RouterLink to="/about">
+        <RouterLink to="/assistant">
           <Link display="flex" alignItems="center">
             <FaInfoCircle />
-            <Box ml={2}>About</Box>
+            <Box ml={2}>Assistant</Box>
           </Link>
         </RouterLink>
-        <RouterLink to="/contact">
+        <RouterLink to="/coding">
           <Link display="flex" alignItems="center">
-            <FaEnvelope />
-            <Box ml={2}>Contact</Box>
+            <FaCode />
+            <Box ml={2}>Coding</Box>
+          </Link>
+        </RouterLink>
+        <RouterLink to="/default-list">
+          <Link display="flex" alignItems="center">
+            <FaList />
+            <Box ml={2}>Default List</Box>
           </Link>
         </RouterLink>
       </VStack>
