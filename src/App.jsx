@@ -1,4 +1,4 @@
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import { Route, BrowserRouter as Router, Routes, useNavigate } from "react-router-dom";
 import Index from "./pages/Index.jsx";
 import About from "./pages/About.jsx";
 import Contact from "./pages/Contact.jsx";
@@ -12,6 +12,12 @@ import { FaComments, FaCompass, FaUser } from "react-icons/fa";
 
 function App() {
   const [isLargerThan768] = useMediaQuery("(min-width: 768px)");
+
+  const navigate = useNavigate();
+
+  const handleLoginClick = () => {
+    navigate("/login");
+  };
 
   return (
     <Router>
@@ -31,7 +37,7 @@ function App() {
         <Box position="fixed" bottom="0" width="100%" bg="gray.900" p={2} display="flex" justifyContent="space-around">
           <IconButton icon={<FaComments />} aria-label="Chat" colorScheme="gray" variant="outline" />
           <IconButton icon={<FaCompass />} aria-label="Discover" colorScheme="gray" variant="outline" />
-          <IconButton icon={<FaUser />} aria-label="Me" colorScheme="gray" variant="outline" />
+          <IconButton icon={<FaUser />} aria-label="Me" colorScheme="gray" variant="outline" onClick={handleLoginClick} />
         </Box>
       )}
     </Router>

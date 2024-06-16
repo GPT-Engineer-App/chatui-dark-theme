@@ -5,9 +5,9 @@ const ChatArea = () => {
   return (
     <Box bg="gray.700" color="white" flex="1" p={4} h={isLargerThan768 ? "100vh" : "auto"}>
       <VStack spacing={4} align="start">
-        <Text>User: How do I create a website crawler?</Text>
-        <Text>Assistant: You can use Python with libraries like BeautifulSoup and requests.</Text>
-        <Code p={4} bg="gray.800" w="100%">
+        <Text color="white">User: How do I create a website crawler?</Text>
+        <Text color="white">Assistant: You can use Python with libraries like BeautifulSoup and requests.</Text>
+        <Code p={4} bg="gray.800" w="100%" color="white">
           {`import requests
 from bs4 import BeautifulSoup
 
